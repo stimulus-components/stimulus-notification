@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="A Stimulus controller for showing notifications."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet" />
+
+    <title>Stimulus Notification</title>
+
+    <script type="module" defer>
+      import { Application } from 'stimulus'
+      import Notification from './src/index'
+
+      const application = Application.start()
+      application.register('notification', Notification)
+    </script>
+  </head>
+
+  <body>
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="relative bg-gray-50 overflow-hidden">
+      <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full" aria-hidden="true">
+        <div class="relative h-full max-w-7xl mx-auto">
+          <svg
+            class="absolute right-full transform translate-y-1/4 translate-x-1/4 lg:translate-x-1/2"
+            width="404"
+            height="784"
+            fill="none"
+            viewBox="0 0 404 784"
+          >
+            <defs>
+              <pattern
+                id="f210dbf6-a58d-4871-961e-36d5016a0f49"
+                x="0"
+                y="0"
+                width="20"
+                height="20"
+                patternUnits="userSpaceOnUse"
+              >
+                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width="404" height="784" fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
+          </svg>
+          <svg
+            class="absolute left-full transform -translate-y-3/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/2"
+            width="404"
+            height="784"
+            fill="none"
+            viewBox="0 0 404 784"
+          >
+            <defs>
+              <pattern
+                id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b"
+                x="0"
+                y="0"
+                width="20"
+                height="20"
+                patternUnits="userSpaceOnUse"
+              >
+                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width="404" height="784" fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="relative pt-6 pb-16 sm:pb-24">
+        <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+          <div class="text-center">
+            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+              <span class="block xl:inline">Stimulus</span>
+              <span class="block text-yellow-600 xl:inline">Notification</span>
+            </h1>
+
+            <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+              A Stimulus controller for showing notifications.
+            </p>
+
+            <p class="text-center mt-3">
+              <img class="inline-block" src="https://img.shields.io/npm/dt/stimulus-notification.svg" />
+              <img class="inline-block" src="https://img.shields.io/npm/v/stimulus-notification.svg" />
+
+              <img
+                class="inline-block"
+                src="https://github.com/stimulus-components/stimulus-notification/workflows/Lint/badge.svg"
+              />
+
+              <img
+                class="inline-block"
+                src="https://img.shields.io/github/license/stimulus-components/stimulus-notification.svg"
+              />
+
+              <img
+                class="inline-block"
+                src="https://api.netlify.com/api/v1/badges/d62d950e-aae7-464d-8333-1078a16ec481/deploy-status"
+              />
+            </p>
+
+            <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+              <div class="rounded-md shadow">
+                <a
+                  href="https://github.com/stimulus-components/stimulus-notification"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-700 md:py-4 md:text-lg md:px-10"
+                >
+                  GitHub
+                </a>
+              </div>
+              <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                <a
+                  href="https://stimulus-components.netlify.app/docs/components/stimulus-notification/"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-yellow-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
+                >
+                  Documentation
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="relative h-full max-w-5xl mx-auto px-4">
+      <section class="mt-16">
+        <div
+          data-controller="notification"
+          class="transition transform duration-1000 hidden fixed inset-0 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:pt-16 sm:items-start sm:justify-end z-50"
+          data-transition-enter-from="opacity-0 translate-x-6"
+          data-transition-enter-to="opacity-100 translate-x-0"
+          data-transition-leave-from="opacity-100 translate-x-0"
+          data-transition-leave-to="opacity-0 translate-x-6"
+        >
+          <div
+            class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto rounded-lg shadow-xs overflow-hidden p-4"
+          >
+            <div class="flex items-start">
+              <svg
+                class="h-6 w-6 text-green-400"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+
+              <div class="ml-3 w-0 flex-1 pt-0.5">
+                <p class="text-sm font-medium text-gray-900">
+                  This alert will magically disappear!
+                </p>
+                <p class="mt-1 text-sm text-gray-500">
+                  Pretty cool, huh?
+                </p>
+              </div>
+
+              <div class="ml-4 flex-shrink-0 flex">
+                <button
+                  data-action="notification#hide"
+                  class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+                >
+                  <span class="sr-only">Close</span>
+                  <svg
+                    class="h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p>Reload to re-run the animation.</p>
+      </section>
+    </div>
+
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <footer class="bg-white">
+      <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+        <div class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+          <div class="px-5 py-2">
+            <p class="text-base text-gray-500">
+              stimulus-notification is a package from the
+              <a href="https://github.com/stimulus-components/stimulus-components" class="hover:text-gray-900 underline"
+                >stimulus-components</a
+              >
+              project.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 flex justify-center space-x-6">
+          <a
+            href="https://twitter.com/guillaumebriday"
+            target="_blank"
+            rel="noopener"
+            class="text-gray-400 hover:text-gray-500"
+          >
+            <span class="sr-only">Twitter</span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+              />
+            </svg>
+          </a>
+
+          <a
+            href="https://github.com/stimulus-components/stimulus-notification"
+            target="_blank"
+            rel="noopener"
+            class="text-gray-400 hover:text-gray-500"
+          >
+            <span class="sr-only">GitHub</span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <p class="mt-8 text-center text-base text-gray-400">
+          This project is released under the
+          <a href="https://opensource.org/licenses/MIT" class="hover:text-gray-900 underline">MIT</a>
+          license.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
