@@ -1,15 +1,18 @@
-import { Controller } from 'stimulus'
-import { useTransition } from 'stimulus-use/dist/use-transition'
+import { Controller } from '@hotwired/stimulus'
+import { useTransition } from 'stimulus-use'
 
 export default class extends Controller {
   timeout: number
   enter: (event?: Event) => void
   leave: (event?: Event) => void
   transitioned: false
-  delayValue: false
+  delayValue: number
 
   static values = {
-    delay: Number
+    delay: {
+      type: Number,
+      default: 3000
+    }
   }
 
   initialize () {
@@ -21,7 +24,7 @@ export default class extends Controller {
 
     this.enter()
 
-    this.timeout = setTimeout(this.hide, this.delayValue || 3000)
+    this.timeout = setTimeout(this.hide, this.delayValue)
   }
 
   async hide () {

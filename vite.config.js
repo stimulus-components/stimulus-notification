@@ -7,11 +7,11 @@ module.exports = {
       name: 'stimulus-notification'
     },
     rollupOptions: {
-      external: ['stimulus-use/dist/use-transition', 'stimulus'],
+      external: ['stimulus-use', '@hotwired/stimulus'],
       output: {
         globals: {
-          stimulus: 'Stimulus',
-          'stimulus-use/dist/use-transition': 'useTransition'
+          '@hotwired/stimulus': 'Stimulus',
+          'stimulus-use': 'useTransition'
         }
       }
     }
