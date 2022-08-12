@@ -7,11 +7,16 @@ export default class extends Controller {
   leave: (event?: Event) => void
   transitioned: false
   delayValue: number
+  hiddenValue: boolean
 
   static values = {
     delay: {
       type: Number,
       default: 3000
+    },
+    hidden: {
+      type: Boolean,
+      default: false
     }
   }
 
@@ -22,6 +27,12 @@ export default class extends Controller {
   connect () {
     useTransition(this)
 
+    if (this.hiddenValue === false) {
+      this.show()
+    }
+  }
+
+  show () {
     this.enter()
 
     this.timeout = setTimeout(this.hide, this.delayValue)
