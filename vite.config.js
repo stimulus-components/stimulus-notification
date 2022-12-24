@@ -1,13 +1,17 @@
-import path from 'path'
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
 
-export default ({ mode }) => {
-  if (mode === 'netlify') return {}
+export default defineConfig(({ mode }) => {
+  if (mode === 'netlify') {
+    return {}
+  }
 
   return {
     build: {
       lib: {
-        entry: path.resolve(__dirname, 'src/index.ts'),
-        name: 'stimulus-notification'
+        entry: resolve(__dirname, 'src/index.ts'),
+        name: 'StimulusNotification',
+        fileName: 'stimulus-notification'
       },
       rollupOptions: {
         external: ['stimulus-use', '@hotwired/stimulus'],
@@ -20,4 +24,4 @@ export default ({ mode }) => {
       }
     }
   }
-}
+})
