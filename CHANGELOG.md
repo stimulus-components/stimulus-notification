@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 2022-12-23
+
+### Added
+
+- Adding `name` in library export to use the package with CDN, Sprockets and `import-maps`.
+
+### Chore
+
+- Bump dependencies.
+- Upgrading to Vite `4.x`.
+- Docs new UI.
+
 ## [2.1.0] - 2022-08-12
 
 ### Added
