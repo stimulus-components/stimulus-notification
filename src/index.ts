@@ -1,6 +1,3 @@
-import { Controller } from '@hotwired/stimulus'
-import { useTransition } from 'stimulus-use'
-
 export default class extends Controller {
   timeout: number
   enter: (event?: Event) => void
@@ -8,6 +5,7 @@ export default class extends Controller {
   transitioned: false
   delayValue: number
   hiddenValue: boolean
+  repeating: boolean
 
   static values = {
     delay: {
@@ -17,6 +15,10 @@ export default class extends Controller {
     hidden: {
       type: Boolean,
       default: false
+    },
+    repeat: {
+      type: Boolean,
+      default: true
     }
   }
 
@@ -45,6 +47,10 @@ export default class extends Controller {
 
     await this.leave()
 
-    this.element.remove()
+    if (this.repeatValue) {
+      this.show()
+    } else {
+      this.element.remove()
+    }
   }
 }
