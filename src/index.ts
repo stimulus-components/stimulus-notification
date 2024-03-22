@@ -1,7 +1,7 @@
-import { Controller } from '@hotwired/stimulus'
-import { useTransition } from 'stimulus-use'
+import { Controller } from "@hotwired/stimulus"
+import { useTransition } from "stimulus-use"
 
-export default class extends Controller {
+export default class Notification extends Controller {
   timeout: number
   enter: (event?: Event) => void
   leave: (event?: Event) => void
@@ -12,19 +12,19 @@ export default class extends Controller {
   static values = {
     delay: {
       type: Number,
-      default: 3000
+      default: 3000,
     },
     hidden: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   }
 
-  initialize () {
+  initialize() {
     this.hide = this.hide.bind(this)
   }
 
-  connect () {
+  connect() {
     useTransition(this)
 
     if (this.hiddenValue === false) {
@@ -32,13 +32,13 @@ export default class extends Controller {
     }
   }
 
-  show () {
+  show() {
     this.enter()
 
     this.timeout = setTimeout(this.hide, this.delayValue)
   }
 
-  async hide () {
+  async hide() {
     if (this.timeout) {
       clearTimeout(this.timeout)
     }
