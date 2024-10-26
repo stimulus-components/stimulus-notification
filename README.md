@@ -1,22 +1,13 @@
 # Stimulus Notification
 
-[![](https://img.shields.io/npm/dt/stimulus-notification.svg)](https://www.npmjs.com/package/stimulus-notification)
-[![](https://img.shields.io/npm/v/stimulus-notification.svg)](https://www.npmjs.com/package/stimulus-notification)
-[![](https://github.com/stimulus-components/stimulus-notification/workflows/Lint/badge.svg)](https://github.com/stimulus-components/stimulus-notification)
-[![](https://img.shields.io/github/license/stimulus-components/stimulus-notification.svg)](https://github.com/stimulus-components/stimulus-notification)
+## 🚚 📦 This project has moved
 
-## Getting started
-
-A Stimulus controller for showing notifications.
+This repository is now maintained in the main [Stimulus Components monorepo](https://github.com/stimulus-components/stimulus-components).
 
 ## 📚 Documentation
 
-See [stimulus-notification documentation](https://www.stimulus-components.com/docs/stimulus-notification/).
-
-## 👷‍♂️ Contributing
-
-Do not hesitate to contribute to the project by adapting or adding features ! Bug reports or pull requests are welcome.
+Visit the [stimulus-notification documentation](https://www.stimulus-components.com/docs/stimulus-notification/) for more information on how to use and integrate this controller.
 
 ## 📝 License
 
-This project is released under the [MIT](http://opensource.org/licenses/MIT) license.
+This project remains licensed under the [MIT](http://opensource.org/licenses/MIT) license.
